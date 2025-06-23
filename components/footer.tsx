@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { GraduationCap, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
+import { GraduationCap, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -11,25 +11,31 @@ export default function Footer() {
           {/* Brand & Description */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <GraduationCap className="h-8 w-8 text-blue-400" />
-              <span className="text-xl font-bold">UniIncubator</span>
+              <img 
+                src="/curaj-incu-logo.png" 
+                alt="CURAJIF Logo" 
+                className="h-12 w-auto object-contain" 
+              />
             </Link>
             <p className="text-gray-400 mb-6">
               Empowering the next generation of entrepreneurs through innovation, mentorship, and comprehensive support.
             </p>
             <div className="flex space-x-4">
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
-                <Facebook className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
-                <Instagram className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
-                <Linkedin className="h-4 w-4" />
-              </Button>
+              <Link href="https://www.facebook.com/curajofficial" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
+                  <Facebook className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="https://x.com/curajasthan" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
+                  <Twitter className="h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="https://www.youtube.com/channel/UCP5Wuxa3sde1gZIMwNuhEsQ" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
+                  <Youtube className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -113,7 +119,7 @@ export default function Footer() {
             <div className="space-y-4 mb-6">
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-2" />
-                <span className="text-sm">info@uniincubator.edu</span>
+                <span className="text-sm">info@curajif.in</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="h-4 w-4 mr-2" />
@@ -122,11 +128,11 @@ export default function Footer() {
               <div className="flex items-start text-gray-400">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
                 <span className="text-sm">
-                  123 University Ave
+                  CURAJ Incubation Foundation
                   <br />
-                  Innovation District
+                  NH-8, Bandarsindari, Tehsil Kishangarh
                   <br />
-                  City, State 12345
+                  Ajmer, Rajasthan 305817
                 </span>
               </div>
             </div>
@@ -150,7 +156,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
-              © {new Date().getFullYear()} University Incubation Center. All rights reserved.
+              © {new Date().getFullYear()} CURAJ Incubation Foundation. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
