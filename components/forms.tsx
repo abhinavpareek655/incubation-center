@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { FileText, UserPlus, BarChart3, Lightbulb, ArrowRight, Clock, CheckCircle } from "lucide-react"
 
 export default function Forms() {
@@ -35,6 +36,7 @@ export default function Forms() {
       status: "Open",
       deadline: "Anytime",
       color: "bg-yellow-100 text-yellow-800",
+      href: "/submit-idea",
     },
   ]
 
@@ -72,9 +74,11 @@ export default function Forms() {
                   <span>Deadline: {form.deadline}</span>
                 </div>
 
-                <Button className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
-                  Access Form
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                <Button asChild className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
+                  <Link href={form.href ?? "#"}>
+                    Access Form
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
