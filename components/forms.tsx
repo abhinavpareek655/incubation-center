@@ -40,7 +40,7 @@ export default function Forms() {
       status: "Open",
       deadline: "Anytime",
       color: "bg-yellow-100 text-yellow-800",
-      link: "#",
+      link: "/submit-idea",
     },
   ]
 
@@ -78,7 +78,6 @@ export default function Forms() {
                   <span>Deadline: {form.deadline}</span>
                 </div>
                 <Link href={form.link} className="block">
-
                   <Button className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
                     Access Form
                     <ArrowRight className="ml-2 h-4 w-4" />
