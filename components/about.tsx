@@ -38,16 +38,18 @@ export default function About() {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="relative">
-            <Image
-              src="/about.png"
-              alt="Incubation Center Workspace"
-              width={600}
-              height={500}
-              className="rounded-lg shadow-lg"
-            />
-          </div>
+            {/* YouTube Video */}
+            <div className="relative aspect-video rounded-lg shadow-lg overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/CFKRuKV_YTs?si=9-SQ1ffxGStTJICQ"
+              title="Incubation Center Video"
+              width="100%"
+              height="100%"
+              className="absolute inset-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            </div>
         </div>
       </div>
     </section>
