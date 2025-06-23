@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { FileText, UserPlus, BarChart3, Lightbulb, ArrowRight, Clock, CheckCircle } from "lucide-react"
 
 export default function Forms() {
@@ -30,7 +31,7 @@ export default function Forms() {
       status: "Members Only",
       deadline: "Monthly",
       color: "bg-purple-100 text-purple-800",
-      link: "#",
+      link: "/stage-status",
     },
     {
       icon: Lightbulb,
@@ -76,7 +77,6 @@ export default function Forms() {
                   <Clock className="h-4 w-4 mr-2" />
                   <span>Deadline: {form.deadline}</span>
                 </div>
-
                 <Link href={form.link} className="block">
 
                   <Button className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
