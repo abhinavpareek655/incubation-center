@@ -51,9 +51,13 @@ export default function Header() {
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/"
                       >
-                        <GraduationCap className="h-6 w-6" />
-                        <div className="mb-2 mt-4 text-lg font-medium">Our Mission</div>
-                        <p className="text-sm leading-tight text-muted-foreground">
+                        <img 
+                          src="/startup-cell-logo.png" 
+                          alt="CURAJIF Logo" 
+                          className="h-12 w-auto object-contain" 
+                        />
+                        <div className="mb-2 mt-4 text-lg font-medium text-center">Our Mission</div>
+                        <p className="text-sm leading-tight text-muted-foreground text-center">
                           Empowering the next generation of entrepreneurs through innovation and support.
                         </p>
                       </a>
