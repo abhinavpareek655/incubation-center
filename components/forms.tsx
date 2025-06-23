@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -12,6 +13,7 @@ export default function Forms() {
       status: "Open",
       deadline: "Rolling Admissions",
       color: "bg-green-100 text-green-800",
+      link: "/apply",
     },
     {
       icon: UserPlus,
@@ -20,6 +22,7 @@ export default function Forms() {
       status: "Open",
       deadline: "Event-based",
       color: "bg-blue-100 text-blue-800",
+      link: "/registration",
     },
     {
       icon: BarChart3,
@@ -28,6 +31,7 @@ export default function Forms() {
       status: "Members Only",
       deadline: "Monthly",
       color: "bg-purple-100 text-purple-800",
+      link: "/stage-status",
     },
     {
       icon: Lightbulb,
@@ -36,7 +40,7 @@ export default function Forms() {
       status: "Open",
       deadline: "Anytime",
       color: "bg-yellow-100 text-yellow-800",
-      href: "/submit-idea",
+      link: "/submit-idea",
     },
   ]
 
@@ -73,13 +77,12 @@ export default function Forms() {
                   <Clock className="h-4 w-4 mr-2" />
                   <span>Deadline: {form.deadline}</span>
                 </div>
-
-                <Button asChild className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
-                  <Link href={form.href ?? "#"}>
+                <Link href={form.link} className="block">
+                  <Button className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
                     Access Form
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}

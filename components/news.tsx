@@ -12,8 +12,8 @@ export default function News() {
 
   const events = [
     {
-      title: "Startup Pitch Competition 2024",
-      date: "2024-02-15",
+      title: "Startup Pitch Competition 2025",
+      date: "2025-07-15",
       time: "2:00 PM - 6:00 PM",
       location: "Main Auditorium",
       image: "/placeholder.svg?height=200&width=300",
