@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { FileText, UserPlus, BarChart3, Lightbulb, ArrowRight, Clock, CheckCircle } from "lucide-react"
 
 export default function Forms() {
