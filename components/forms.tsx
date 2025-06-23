@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { FileText, UserPlus, BarChart3, Lightbulb, ArrowRight, Clock, CheckCircle } from "lucide-react"
 
 export default function Forms() {
@@ -12,7 +13,7 @@ export default function Forms() {
       status: "Open",
       deadline: "Rolling Admissions",
       color: "bg-green-100 text-green-800",
-      link: "#",
+      link: "/apply",
     },
     {
       icon: UserPlus,
@@ -78,6 +79,7 @@ export default function Forms() {
                 </div>
 
                 <Link href={form.link} className="block">
+
                   <Button className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
                     Access Form
                     <ArrowRight className="ml-2 h-4 w-4" />
