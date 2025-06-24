@@ -1,12 +1,12 @@
 "use client"
 
+import type React from "react"
+
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { Input } from "@/components/ui/input"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Button } from "@/components/ui/button"
+import { PaperForm, PaperInput, PaperButton } from "@/components/paper-form"
 
-export default function ApplyPage() {
+export default function IncubationLetterPage() {
   const sendEmail = () => {
     console.log("submit")
   }
@@ -20,55 +20,92 @@ export default function ApplyPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="py-16">
-        <div className="container px-4 max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-4" id="form">
-            <h2>To,</h2>
-            <p>The Executive Director,</p>
-            <p>CURAJ Incubation Foundation,</p>
-            <p>Bandarsindari, Tehsil Kishangarh, Ajmer, Rajasthan</p>
-            <p className="pt-4">
-              Date:{" "}
-              <Input type="date" name="date" id="date" className="inline-block w-auto ml-2" />
-            </p>
-            <p>Subject: Letter of Intent for incubation support</p>
-            <p className="pt-4">Respected Sir/Madam,</p>
-            <p>
-              I,
-              <Input type="text" name="namee" id="namee" className="inline-block w-auto mx-2" />
-              am writing to express my intent to receive
-              <span className="mx-2">Pre-incubation <Checkbox name="pre" id="pre" className="ml-1" /></span>
-              <span className="mx-2">Virtual incubation <Checkbox name="virtual" id="virtual" className="ml-1" /></span>
-              <span className="mx-2">Physical incubation <Checkbox name="physical" id="physical" className="ml-1" /></span>
-              services from CURAJ Incubation Foundation (CURAJIF) in my current role as
-              <Input type="text" name="role" id="role" placeholder="Designation" className="inline-block w-auto mx-2" />
-              of
-              <Input type="text" name="vari" id="vari" placeholder="Company name (if incorporated)" className="inline-block w-auto mx-2" />
-              if incorporated in
-              <Input type="text" name="var2" id="var2" placeholder="Year & Date" className="inline-block w-auto mx-2" />
-              (Please state the year of incorporation).
-            </p>
-            <p>
-              I’d like to opt for
-              <Input type="text" name="service" id="service" className="inline-block w-auto mx-2" />
-              (Please state the name of the incubation program) led by CURAJIF. This will help me improve my foundational
-              knowledge and gain exposure to innovative methods of problem-solving.
-            </p>
-            <p>
-              Kindly, accept my application and let me know when can we sign a formal agreement and begin the incubation process.
-              <br />
-              Thank you.
-            </p>
-            <p>
-              Sincerely,
-              <Input type="text" name="since" id="since" className="inline-block w-auto ml-2" />
-            </p>
-            <Button type="submit" className="mt-4 submit-button">
-              Submit
-            </Button>
-          </form>
-        </div>
-      </main>
+      <PaperForm title="Letter of Intent for Incubation Support">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-4 text-gray-800 leading-relaxed">
+            <div className="text-right mb-8">
+              <span className="font-medium">Date: </span>
+              <PaperInput type="date" name="date" className="inline-block w-40 ml-2" />
+            </div>
+
+            <div className="mb-8">
+              <p className="font-medium">To,</p>
+              <p>The Executive Director,</p>
+              <p>CURAJ Incubation Foundation,</p>
+              <p>Bandarsindari, Tehsil Kishangarh, Ajmer, Rajasthan</p>
+            </div>
+
+            <div className="mb-6">
+              <p className="font-medium">Subject: Letter of Intent for incubation support</p>
+            </div>
+
+            <div className="mb-6">
+              <p>Respected Sir/Madam,</p>
+            </div>
+
+            <div className="space-y-4">
+              <p className="leading-relaxed">
+                I, <PaperInput type="text" name="namee" className="inline-block w-48 mx-1" placeholder="Your Name" />
+                am writing to express my intent to receive
+              </p>
+
+              <div className="flex flex-wrap gap-6 my-4">
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="pre" className="w-4 h-4" />
+                  <span>Pre-incubation</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="virtual" className="w-4 h-4" />
+                  <span>Virtual incubation</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="physical" className="w-4 h-4" />
+                  <span>Physical incubation</span>
+                </label>
+              </div>
+
+              <p className="leading-relaxed">
+                services from CURAJ Incubation Foundation (CURAJIF) in my current role as
+                <PaperInput type="text" name="role" placeholder="Designation" className="inline-block w-32 mx-1" />
+                of <PaperInput type="text" name="vari" placeholder="Company name" className="inline-block w-48 mx-1" />
+                if incorporated in{" "}
+                <PaperInput type="text" name="var2" placeholder="Year & Date" className="inline-block w-32 mx-1" />
+                (Please state the year of incorporation).
+              </p>
+
+              <p className="leading-relaxed">
+                I'd like to opt for{" "}
+                <PaperInput
+                  type="text"
+                  name="service"
+                  className="inline-block w-64 mx-1"
+                  placeholder="Incubation program name"
+                />
+                (Please state the name of the incubation program) led by CURAJIF. This will help me improve my
+                foundational knowledge and gain exposure to innovative methods of problem-solving.
+              </p>
+
+              <p className="leading-relaxed">
+                Kindly, accept my application and let me know when can we sign a formal agreement and begin the
+                incubation process.
+              </p>
+
+              <p>Thank you.</p>
+
+              <div className="mt-8">
+                <p>
+                  Sincerely,{" "}
+                  <PaperInput type="text" name="since" className="inline-block w-48 ml-2" placeholder="Your Name" />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center pt-8">
+            <PaperButton type="submit">Submit Letter</PaperButton>
+          </div>
+        </form>
+      </PaperForm>
       <Footer />
     </div>
   )

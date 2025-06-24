@@ -1,350 +1,211 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import {
+  PaperForm,
+  PaperFormField,
+  PaperInput,
+  PaperTextarea,
+  PaperCheckbox,
+  PaperRadio,
+  PaperButton,
+} from "@/components/paper-form"
 
-export default function StageStatusPage() {
+export default function StartupFormPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="py-8">
-        <div className="container">
-          <h1>CRUX</h1>
-          <h6>Powered by</h6>
-          <h1>Rafts &amp; Rivers</h1>
-
-          <h3 style={{ color: "skyblue" }}>Startup Introduction</h3>
-          <br />
-          <br />
-          <form method="POST" action="https://curajif.in/startup-details.php">
-            <div className="form-group">
-              <label htmlFor="promoter-name">Name of the Promoter/Founder</label>
-              <input type="text" id="promoter-name" name="promoter_name" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="startup-name">Name of the Startup/Business</label>
-              <input type="text" id="startup-name" name="startup_name" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="line-of-business">Line of Business/Industry/Segment</label>
-              <input type="text" id="line-of-business" name="line_of_business" />
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="incorporation-date">Date of Incorporation</label>
-                <input type="date" id="incorporation-date" name="incorporation_date" />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="experience">Experience of the Promoter (years/months)</label>
-                <input type="text" id="experience" name="experience" />
-              </div>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="address">Address</label>
-              <input type="text" id="address" name="address" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="phone-number">Phone/Mobile Number</label>
-              <input type="tel" id="phone-number" name="phone_number" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="phone-number">Email</label>
-              <input type="email" id="email" name="email" />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="other-business">Does founder have any other business or income source? If yes, provide details</label>
-              <input type="text" id="other-business" name="other_business" />
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label>How Startup is funded till now</label>
-                <br />
-                <div className="checkbox-group">
-                  <div className="checkbox-item">
-                    <label htmlFor="self-funding">Self funding (bootstrap)</label>
-                    <input type="checkbox" id="self-funding" name="funding_sources[]" value="Self funding (bootstrap)" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="loans">Loans</label>
-                    <input type="checkbox" id="loans" name="funding_sources[]" value="Loans" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="gov-grants">Government grants</label>
-                    <input type="checkbox" id="gov-grants" name="funding_sources[]" value="Government grants" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="seed-funding">Seed funding</label>
-                    <input type="checkbox" id="seed-funding" name="funding_sources[]" value="Seed funding" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="equity-funding">Equity funding</label>
-                    <input type="checkbox" id="equity-funding" name="funding_sources[]" value="Equity funding" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="form-group">
-                <label>Expectation from Incubation Centre</label>
-                <br />
-                <div className="checkbox-group">
-                  <div className="checkbox-item">
-                    <label htmlFor="business-planning">Proper business planning</label>
-                    <input type="checkbox" id="business-planning" name="expectations[]" value="Proper business planning" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="growth-sales">Growth in sales</label>
-                    <input type="checkbox" id="growth-sales" name="expectations[]" value="Growth in sales" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="marketing-strategy">Marketing strategy</label>
-                    <input type="checkbox" id="marketing-strategy" name="expectations[]" value="Marketing strategy" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="team-building">Team building and monitoring</label>
-                    <input type="checkbox" id="team-building" name="expectations[]" value="Team building and monitoring" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="funding-grants">Funding (Government grants)</label>
-                    <input type="checkbox" id="funding-grants" name="expectations[]" value="Funding (Government grants)" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="funding-loans">Funding (Loans)</label>
-                    <input type="checkbox" id="funding-loans" name="expectations[]" value="Funding (Loans)" />
-                  </div>
-
-                  <div className="checkbox-item">
-                    <label htmlFor="funding-equity">Funding (Equity)</label>
-                    <input type="checkbox" id="funding-equity" name="expectations[]" value="Funding (Equity)" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <br />
-            <br />
-            <h3 style={{ color: "skyblue" }}>Current Stage and Status</h3>
-            <br />
-
-            <div className="form-group">
-              <label htmlFor="business-details" style={{ textDecoration: "none" }}>
-                About the Business/Startups (product/service, customers, cost, technology, demand and supply, area of operation)
-              </label>
-              <textarea id="business-details" name="business_details" rows={4}></textarea>
-            </div>
-
-            <div className="form-row" style={{ display: "flex", flexDirection: "column" }}>
-              <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-                <label htmlFor="employees" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}>
-                  Number of employees
-                </label>
-                <input type="number" id="employees" name="employees" style={{ border: "1px solid #000", padding: 5, width: 100, boxSizing: "border-box", marginLeft: "auto" }} />
-              </div>
-
-              <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-                <label htmlFor="turnover" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}>
-                  Current turnover (tentative annual)
-                </label>
-                <input type="number" id="turnover" name="turnover" style={{ border: "1px solid #000", padding: 5, width: 100, boxSizing: "border-box", marginLeft: "auto" }} />
-              </div>
-
-              <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-                <label htmlFor="expenditure" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}>
-                  Expenditures (tentative monthly)
-                </label>
-                <input type="number" id="expenditure" name="expenditure" style={{ border: "1px solid #000", padding: 5, width: 100, boxSizing: "border-box", marginLeft: "auto" }} />
-              </div>
-
-              <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-                <label htmlFor="locations-number" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}>
-                  Location served (Number)
-                </label>
-                <input type="number" id="locations-number" name="locations_number" style={{ border: "1px solid #000", padding: 5, width: 100, boxSizing: "border-box", marginLeft: "auto" }} />
-              </div>
-
-              <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-                <label htmlFor="locations-number" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}></label>
-              </div>
-            </div>
-
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="locations-names" style={{ textDecoration: "none" }}>
-                  Location served (Names)
-                </label>
-                <input type="text" id="locations-names" name="locations_names" />
-              </div>
-            </div>
-
-            <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-              <label style={{ textDecoration: "none", marginRight: 10 }}>Have an App</label>
-              <input type="checkbox" id="have-app" name="have_app" style={{ marginRight: 20 }} />
-
-              <label style={{ textDecoration: "none", marginRight: 10 }} htmlFor="have-website">
-                Have a website
-              </label>
-              <input type="checkbox" id="have-website" name="have_website" />
-            </div>
-            <br />
-
-            <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-              <label htmlFor="no_of_product" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}>
-                Number of products/services offered
-              </label>
-              <input type="number" id="no_of_product" name="no_of_product" style={{ border: "1px solid #000", padding: 5, width: 100, boxSizing: "border-box", marginLeft: "auto" }} />
-            </div>
-
-            <div className="form-group" style={{ display: "flex", alignItems: "center", marginBottom: 10 }}>
-              <label htmlFor="total_subscription" style={{ minWidth: 200, marginRight: 20, textAlign: "left", textDecoration: "none" }}>
-                Total subscriptions/customers
-              </label>
-              <input type="number" id="total_subscription" name="total_subscription" style={{ border: "1px solid #000", padding: 5, width: 100, boxSizing: "border-box", marginLeft: "auto" }} />
-            </div>
-
-            <br />
-
-            <div className="form-group">
-              <label style={{ textDecoration: "none" }} htmlFor="customer-type">Customer Type</label>
-              <div className="checkbox-group">
-                <input type="checkbox" id="b2b" name="customer_type[]" value="B2B" />
-                <label htmlFor="b2b" style={{ textDecoration: "none" }}>
-                  B2B
-                </label>
-
-                <input type="checkbox" id="b2c" name="customer_type[]" value="B2C" />
-                <label htmlFor="b2c" style={{ textDecoration: "none" }}>
-                  B2C
-                </label>
-
-                <input type="checkbox" id="b2g" name="customer_type[]" value="B2G" />
-                <label htmlFor="b2g" style={{ textDecoration: "none" }}>
-                  B2G
-                </label>
-
-                <input type="checkbox" id="other" name="customer_type[]" value="Any Other" />
-                <label htmlFor="other" style={{ textDecoration: "none" }}>
-                  Any Other
-                </label>
-              </div>
-            </div>
-            <br />
-
-            <div className="form-group">
-              <label htmlFor="monthly-growth" style={{ textDecoration: "none" }}>
-                Monthly growth rate (%)
-              </label>
-              <input type="number" id="monthly-growth" name="monthly_growth" />
-            </div>
-
-            <div className="form-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <label style={{ textDecoration: "none", marginRight: 10 }}>
-                Do you have a proper marketing strategy in place?
-              </label>
-              <div className="radio-group" style={{ display: "flex", alignItems: "center" }}>
-                <input type="radio" id="marketing-yes" name="marketing_strategy" value="Yes" style={{ marginRight: 5 }} />
-                <label htmlFor="marketing-yes" style={{ textDecoration: "none", marginRight: 20 }}>
-                  Yes
-                </label>
-
-                <input type="radio" id="marketing-no" name="marketing_strategy" value="No" style={{ marginRight: 5 }} />
-                <label htmlFor="marketing-no" style={{ textDecoration: "none" }}>
-                  No
-                </label>
-              </div>
-            </div>
-
-            <br />
-
-            <div className="form-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <label style={{ textDecoration: "none", marginRight: 10 }}>
-                Do you have a structured team with monitoring mechanism?
-              </label>
-              <div className="radio-group" style={{ display: "flex", alignItems: "center" }}>
-                <input type="radio" id="team-yes" name="team_structure" value="Yes" style={{ marginRight: 5 }} />
-                <label htmlFor="team-yes" style={{ textDecoration: "none", marginRight: 20 }}>
-                  Yes
-                </label>
-
-                <input type="radio" id="team-no" name="team_structure" value="No" style={{ marginRight: 5 }} />
-                <label htmlFor="team-no" style={{ textDecoration: "none" }}>
-                  No
-                </label>
-              </div>
-            </div>
-            <br />
-
-            <div className="form-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <label style={{ textDecoration: "none", marginRight: 10 }}>Do you have a timeline-targeted business plan?</label>
-              <div className="radio-group" style={{ display: "flex", alignItems: "center" }}>
-                <input type="radio" id="timeline-yes" name="timeline_plan" value="Yes" style={{ marginRight: 5 }} />
-                <label htmlFor="timeline-yes" style={{ textDecoration: "none", marginRight: 20 }}>
-                  Yes
-                </label>
-
-                <input type="radio" id="timeline-no" name="timeline_plan" value="No" style={{ marginRight: 5 }} />
-                <label htmlFor="timeline-no" style={{ textDecoration: "none" }}>
-                  No
-                </label>
-              </div>
-            </div>
-            <br />
-
-            <div className="form-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <label style={{ textDecoration: "none", marginRight: 10 }}>Does this business/startup mean everything to you?</label>
-              <div className="radio-group" style={{ display: "flex", alignItems: "center" }}>
-                <input type="radio" id="everything-yes" name="business_importance" value="Yes" style={{ marginRight: 5 }} />
-                <label htmlFor="everything-yes" style={{ textDecoration: "none", marginRight: 20 }}>
-                  Yes
-                </label>
-
-                <input type="radio" id="everything-no" name="business_importance" value="No" style={{ marginRight: 5 }} />
-                <label htmlFor="everything-no" style={{ textDecoration: "none" }}>
-                  No
-                </label>
-              </div>
-            </div>
-            <br />
-
-            <div className="form-group" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-              <label style={{ textDecoration: "none", marginRight: 10 }}>Do you have any alternative plan if this does not succeed?</label>
-              <div className="radio-group" style={{ display: "flex", alignItems: "center" }}>
-                <input type="radio" id="alternative-yes" name="alternative_plan" value="Yes" style={{ marginRight: 5 }} />
-                <label htmlFor="alternative-yes" style={{ textDecoration: "none", marginRight: 20 }}>
-                  Yes
-                </label>
-
-                <input type="radio" id="alternative-no" name="alternative_plan" value="No" style={{ marginRight: 5 }} />
-                <label htmlFor="alternative-no" style={{ textDecoration: "none" }}>
-                  No
-                </label>
-              </div>
-            </div>
-            <br />
-            <br />
-
-            <div className="form-group">
-              <button type="submit" id="submit-button" style={{ padding: "10px 20px", backgroundColor: "teal", width: "-webkit-fill-available", color: "white", border: "none", cursor: "pointer" }}>
-                Submit
-              </button>
-            </div>
-          </form>
+      <PaperForm title="CRUX - Startup Introduction Form">
+        <div className="text-center mb-8">
+          <h2 className="text-lg font-semibold text-gray-600">Powered by Rafts & Rivers</h2>
         </div>
-      </main>
+
+        <form method="POST" action="https://curajif.in/startup-details.php" className="space-y-6">
+          <div className="border-b-2 border-blue-200 pb-6 mb-8">
+            <h3 className="text-xl font-semibold text-blue-600 mb-6">Startup Introduction</h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <PaperFormField label="Name of the Promoter/Founder" required>
+                <PaperInput type="text" name="promoter_name" required />
+              </PaperFormField>
+
+              <PaperFormField label="Name of the Startup/Business" required>
+                <PaperInput type="text" name="startup_name" required />
+              </PaperFormField>
+            </div>
+
+            <PaperFormField label="Line of Business/Industry/Segment" required>
+              <PaperInput type="text" name="line_of_business" required />
+            </PaperFormField>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <PaperFormField label="Date of Incorporation" required>
+                <PaperInput type="date" name="incorporation_date" required />
+              </PaperFormField>
+
+              <PaperFormField label="Experience of the Promoter (years/months)" required>
+                <PaperInput type="text" name="experience" required />
+              </PaperFormField>
+            </div>
+
+            <PaperFormField label="Address" required>
+              <PaperInput type="text" name="address" required />
+            </PaperFormField>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <PaperFormField label="Phone/Mobile Number" required>
+                <PaperInput type="tel" name="phone_number" required />
+              </PaperFormField>
+
+              <PaperFormField label="Email" required>
+                <PaperInput type="email" name="email" required />
+              </PaperFormField>
+            </div>
+
+            <PaperFormField label="Does founder have any other business or income source? If yes, provide details">
+              <PaperInput type="text" name="other_business" />
+            </PaperFormField>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <PaperFormField label="How Startup is funded till now">
+                <div className="space-y-3">
+                  <PaperCheckbox
+                    label="Self funding (bootstrap)"
+                    name="funding_sources[]"
+                    value="Self funding (bootstrap)"
+                  />
+                  <PaperCheckbox label="Loans" name="funding_sources[]" value="Loans" />
+                  <PaperCheckbox label="Government grants" name="funding_sources[]" value="Government grants" />
+                  <PaperCheckbox label="Seed funding" name="funding_sources[]" value="Seed funding" />
+                  <PaperCheckbox label="Equity funding" name="funding_sources[]" value="Equity funding" />
+                </div>
+              </PaperFormField>
+
+              <PaperFormField label="Expectation from Incubation Centre">
+                <div className="space-y-3">
+                  <PaperCheckbox
+                    label="Proper business planning"
+                    name="expectations[]"
+                    value="Proper business planning"
+                  />
+                  <PaperCheckbox label="Growth in sales" name="expectations[]" value="Growth in sales" />
+                  <PaperCheckbox label="Marketing strategy" name="expectations[]" value="Marketing strategy" />
+                  <PaperCheckbox
+                    label="Team building and monitoring"
+                    name="expectations[]"
+                    value="Team building and monitoring"
+                  />
+                  <PaperCheckbox
+                    label="Funding (Government grants)"
+                    name="expectations[]"
+                    value="Funding (Government grants)"
+                  />
+                  <PaperCheckbox label="Funding (Loans)" name="expectations[]" value="Funding (Loans)" />
+                  <PaperCheckbox label="Funding (Equity)" name="expectations[]" value="Funding (Equity)" />
+                </div>
+              </PaperFormField>
+            </div>
+          </div>
+
+          <div className="border-b-2 border-blue-200 pb-6 mb-8">
+            <h3 className="text-xl font-semibold text-blue-600 mb-6">Current Stage and Status</h3>
+
+            <PaperFormField label="About the Business/Startups (product/service, customers, cost, technology, demand and supply, area of operation)">
+              <PaperTextarea name="business_details" rows={4} />
+            </PaperFormField>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <PaperFormField label="Number of employees">
+                <PaperInput type="number" name="employees" />
+              </PaperFormField>
+
+              <PaperFormField label="Current turnover (tentative annual)">
+                <PaperInput type="number" name="turnover" />
+              </PaperFormField>
+
+              <PaperFormField label="Expenditures (tentative monthly)">
+                <PaperInput type="number" name="expenditure" />
+              </PaperFormField>
+
+              <PaperFormField label="Location served (Number)">
+                <PaperInput type="number" name="locations_number" />
+              </PaperFormField>
+            </div>
+
+            <PaperFormField label="Location served (Names)">
+              <PaperInput type="text" name="locations_names" />
+            </PaperFormField>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex items-center space-x-4">
+                <PaperCheckbox label="Have an App" name="have_app" />
+                <PaperCheckbox label="Have a website" name="have_website" />
+              </div>
+
+              <PaperFormField label="Number of products/services offered">
+                <PaperInput type="number" name="no_of_product" />
+              </PaperFormField>
+
+              <PaperFormField label="Total subscriptions/customers">
+                <PaperInput type="number" name="total_subscription" />
+              </PaperFormField>
+            </div>
+
+            <PaperFormField label="Customer Type">
+              <div className="flex flex-wrap gap-4">
+                <PaperCheckbox label="B2B" name="customer_type[]" value="B2B" />
+                <PaperCheckbox label="B2C" name="customer_type[]" value="B2C" />
+                <PaperCheckbox label="B2G" name="customer_type[]" value="B2G" />
+                <PaperCheckbox label="Any Other" name="customer_type[]" value="Any Other" />
+              </div>
+            </PaperFormField>
+
+            <PaperFormField label="Monthly growth rate (%)">
+              <PaperInput type="number" name="monthly_growth" />
+            </PaperFormField>
+
+            <div className="space-y-4">
+              <PaperFormField label="Do you have a proper marketing strategy in place?">
+                <div className="flex space-x-6">
+                  <PaperRadio label="Yes" name="marketing_strategy" value="Yes" />
+                  <PaperRadio label="No" name="marketing_strategy" value="No" />
+                </div>
+              </PaperFormField>
+
+              <PaperFormField label="Do you have a structured team with monitoring mechanism?">
+                <div className="flex space-x-6">
+                  <PaperRadio label="Yes" name="team_structure" value="Yes" />
+                  <PaperRadio label="No" name="team_structure" value="No" />
+                </div>
+              </PaperFormField>
+
+              <PaperFormField label="Do you have a timeline-targeted business plan?">
+                <div className="flex space-x-6">
+                  <PaperRadio label="Yes" name="timeline_plan" value="Yes" />
+                  <PaperRadio label="No" name="timeline_plan" value="No" />
+                </div>
+              </PaperFormField>
+
+              <PaperFormField label="Does this business/startup mean everything to you?">
+                <div className="flex space-x-6">
+                  <PaperRadio label="Yes" name="business_importance" value="Yes" />
+                  <PaperRadio label="No" name="business_importance" value="No" />
+                </div>
+              </PaperFormField>
+
+              <PaperFormField label="Do you have any alternative plan if this does not succeed?">
+                <div className="flex space-x-6">
+                  <PaperRadio label="Yes" name="alternative_plan" value="Yes" />
+                  <PaperRadio label="No" name="alternative_plan" value="No" />
+                </div>
+              </PaperFormField>
+            </div>
+          </div>
+
+          <div className="text-center pt-6">
+            <PaperButton type="submit">Submit Application</PaperButton>
+          </div>
+        </form>
+      </PaperForm>
       <Footer />
     </div>
   )
