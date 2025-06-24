@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <img 
-                src="/curaj-incu-logo.png" 
+                src="/CIF Logo Final.png" 
                 alt="CURAJIF Logo" 
                 className="h-12 w-auto object-contain" 
               />
