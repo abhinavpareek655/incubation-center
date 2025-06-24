@@ -40,14 +40,13 @@ export default function About() {
 
             {/* YouTube Video */}
             <div className="relative aspect-video rounded-lg shadow-lg overflow-hidden">
-              <video
-                src="/ITBI 14_05_2024 (1).mp4"
+              <iframe
+                src="https://www.youtube.com/embed/FCbu5Awgooo"
                 title="Incubation Center Video"
-                className="absolute inset-0 w-full h-full object-cover"
-                controls
-                autoPlay={false}
-                playsInline
-              ></video>
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
         </div>
       </div>
