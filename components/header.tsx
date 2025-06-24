@@ -22,12 +22,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center space-x-2">
           <img 
-            src="/curaj-banner.png" 
+            src="/CIF Logo Final.png" 
             alt="CURAJIF Logo" 
             className="h-12 w-auto object-contain" 
           />
+          <span className="text-xl font-bold text-gray-900">CIF</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -52,10 +53,11 @@ export default function Header() {
                         href="/"
                       >
                         <img 
-                          src="/startup-cell-logo.png" 
+                          src="/ISC logo .png" 
                           alt="CURAJIF Logo" 
-                          className="h-12 w-auto object-contain" 
+                          className="h-16 w-auto object-contain rounded-full mx-auto" 
                         />
+
                         <div className="mb-2 mt-4 text-lg font-medium text-center">Our Mission</div>
                         <p className="text-sm leading-tight text-muted-foreground text-center">
                           Empowering the next generation of entrepreneurs through innovation and support.

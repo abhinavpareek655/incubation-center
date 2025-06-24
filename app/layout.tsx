@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/curaj-logo.png" />
+        <link rel="icon" href="/CURAJ Logo.png" />
       </head>
       <body>{children}</body>
     </html>

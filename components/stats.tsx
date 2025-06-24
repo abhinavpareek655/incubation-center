@@ -6,7 +6,7 @@ export default function Stats() {
     {
       icon: Building,
       label: "Startups Launched",
-      value: "150+",
+      value: "20+",
       description: "Successfully incubated companies",
     },
     {
@@ -18,25 +18,25 @@ export default function Stats() {
     {
       icon: DollarSign,
       label: "Total Funding",
-      value: "$50M+",
+      value: "₹5.3Cr+",
       description: "Raised by our portfolio companies",
     },
     {
       icon: Users,
       label: "Jobs Created",
-      value: "2,500+",
+      value: "500+",
       description: "Employment opportunities generated",
     },
     {
       icon: Award,
       label: "Awards Won",
-      value: "25+",
+      value: "10+",
       description: "Recognition and industry awards",
     },
     {
       icon: Globe,
       label: "Global Reach",
-      value: "15+",
+      value: "10+",
       description: "Countries with our alumni",
     },
   ]

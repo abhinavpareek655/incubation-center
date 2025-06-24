@@ -7,22 +7,22 @@ import { ArrowRight } from "lucide-react"
 export default function TeamPreview() {
   const teamMembers = [
     {
-      name: "Dr. Sarah Johnson",
-      role: "Executive Director",
-      image: "/placeholder.svg?height=200&width=200",
-      bio: "Former tech executive with 20+ years of experience in startup ecosystems.",
+      name: "Dr. Akhil Agrawal",
+      role: "Director",
+      image: "/img21.jpg",
+      bio: "Associate Professor and Head of Microbiology at CURAJ, Ph.D. (TERI University), postdoc (University of Calgary). Expert in crop and agricultural microbiology, IPR, innovation, and startup ecosystems.",
     },
     {
-      name: "Michael Chen",
-      role: "Program Manager",
-      image: "/placeholder.svg?height=200&width=200",
-      bio: "Serial entrepreneur and mentor with expertise in scaling technology companies.",
+      name: "Prof. Anand Bhalerao",
+      role: "Chairman",
+      image: "/anand-bhalerao.jpg",
+      bio: "Visionary academic leader and current Vice Chancellor of Central University of Rajasthan, dedicated to solution-driven research, knowledge dissemination, and building a value-rich, community-embedded university.",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Investment Director",
-      image: "/placeholder.svg?height=200&width=200",
-      bio: "Former VC partner specializing in early-stage investments and funding strategies.",
+      name: "Dr. Hemlata Manglani",
+      role: "Director",
+      image: "/img22.jpg",
+      bio: "Associate Professor and Head, Department of Economics, known for inspiring leadership, commitment to student success, and advancing economic research for societal impact.",
     },
   ]
 
@@ -38,18 +38,19 @@ export default function TeamPreview() {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <Image
+            <Card key={index} className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
+              <CardContent className="p-6 flex-1 flex flex-col">
+                <div className="w-[150px] h-[200px] mx-auto mb-4 relative rounded-lg overflow-hidden">
+                  <Image
                   src={member.image || "/placeholder.svg"}
                   alt={member.name}
-                  width={150}
-                  height={150}
-                  className="rounded-full mx-auto mb-4"
-                />
+                  fill
+                  className="object-cover"
+                  />
+                </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
                 <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.bio}</p>
+                <p className="text-gray-600 text-sm flex-1">{member.bio}</p>
               </CardContent>
             </Card>
           ))}

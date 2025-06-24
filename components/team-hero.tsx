@@ -7,7 +7,7 @@ export default function TeamHero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/placeholder.svg?height=600&width=1200')`,
+          backgroundImage: `url('/img1.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
