@@ -89,7 +89,7 @@ export default function News() {
           </p>
         </div>
 
-        {/* Events Carousel */}
+        {/* Events Slideshow - Enhanced */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Upcoming Events</h3>
           <div className="relative">
@@ -102,6 +102,14 @@ export default function News() {
                     fill
                     className="object-cover"
                   />
+                  {/* Image overlay with event type */}
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-blue-600">{events[currentSlide].category}</Badge>
+                  </div>
+                  {/* Attendee count overlay */}
+                  <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                    200+ attending
+                  </div>
                 </div>
                 <CardContent className="p-8 flex flex-col justify-center">
                   <Badge className="w-fit mb-4">{events[currentSlide].category}</Badge>
@@ -131,7 +139,7 @@ export default function News() {
               </div>
             </Card>
 
-            {/* Carousel Controls */}
+            {/* Enhanced Carousel Controls */}
             <div className="flex justify-center mt-6 space-x-4">
               <Button variant="outline" size="icon" onClick={prevSlide}>
                 <ChevronLeft className="h-4 w-4" />
