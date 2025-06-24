@@ -14,11 +14,13 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Search, User, Menu, GraduationCap } from "lucide-react"
+import AnnouncementTicker from "./announcement-ticker"
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   return (
+    <>
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
@@ -237,5 +239,7 @@ export default function Header() {
         </div>
       )}
     </header>
+    <AnnouncementTicker />
+    </>
   )
 }
