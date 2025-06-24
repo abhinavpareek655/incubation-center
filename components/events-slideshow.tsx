@@ -12,15 +12,14 @@ export default function EventsSlideshow() {
 
   const events = [
     {
-      title: "Startup Pitch Competition 2024",
-      date: "2024-02-15",
+      title: "Startup Pitch Competition 2025",
+      date: "2025-07-15",
       time: "2:00 PM - 6:00 PM",
       location: "Main Auditorium",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/startup-pitch.png",
       category: "Competition",
       attendees: 200,
-      description:
-        "Annual pitch competition where startups compete for $100K in funding. Join us for an exciting day of innovation and entrepreneurship.",
+      description: "Annual pitch competition where startups compete for $100K in funding.",
       highlights: ["$100K Prize Pool", "Expert Judges", "Networking Reception"],
     },
     {
@@ -28,11 +27,10 @@ export default function EventsSlideshow() {
       date: "2024-02-20",
       time: "10:00 AM - 4:00 PM",
       location: "Tech Lab",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/img23.jpg",
       category: "Workshop",
       attendees: 50,
-      description:
-        "Hands-on workshop covering the latest AI technologies and applications for startups. Learn from industry experts and build practical skills.",
+      description: "Hands-on workshop covering the latest AI technologies and applications.",
       highlights: ["Hands-on Learning", "Industry Experts", "Certificate Provided"],
     },
     {
@@ -40,16 +38,15 @@ export default function EventsSlideshow() {
       date: "2024-02-25",
       time: "6:00 PM - 9:00 PM",
       location: "Innovation Hub",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/img25.jpg",
       category: "Networking",
       attendees: 150,
-      description:
-        "Connect with angel investors and VCs looking for promising startups. Perfect opportunity to pitch your ideas and build relationships.",
+      description: "Connect with angel investors and VCs looking for promising startups.",
       highlights: ["20+ Investors", "1-on-1 Sessions", "Pitch Opportunities"],
     },
     {
       title: "Women in Tech Summit",
-      date: "2024-03-08",
+      date: "2025-10-15",
       time: "9:00 AM - 5:00 PM",
       location: "Conference Center",
       image: "/placeholder.svg?height=400&width=600",
@@ -61,7 +58,7 @@ export default function EventsSlideshow() {
     },
     {
       title: "Blockchain & Web3 Bootcamp",
-      date: "2024-03-15",
+      date: "2025-11-05",
       time: "10:00 AM - 6:00 PM",
       location: "Innovation Lab",
       image: "/placeholder.svg?height=400&width=600",
@@ -102,12 +99,14 @@ export default function EventsSlideshow() {
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image Section */}
               <div className="relative h-64 lg:h-auto">
-                <Image
-                  src={events[currentSlide].image || "/placeholder.svg"}
-                  alt={events[currentSlide].title}
-                  fill
-                  className="object-cover"
-                />
+                <div className="relative w-full aspect-[3/2]">
+                  <Image
+                    src={events[currentSlide].image || "/placeholder.svg"}
+                    alt={events[currentSlide].title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-blue-600">{events[currentSlide].category}</Badge>
                 </div>

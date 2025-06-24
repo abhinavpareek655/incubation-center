@@ -8,7 +8,7 @@ export default function NewsHero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/placeholder.svg?height=600&width=1200')`,
+          backgroundImage: `url('/img2.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />

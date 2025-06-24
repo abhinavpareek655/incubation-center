@@ -16,6 +16,16 @@ export default function Footer() {
                 alt="CURAJIF Logo" 
                 className="h-12 w-auto object-contain" 
               />
+              <img 
+                src="/curaj-banner.png" 
+                alt="CURAJ Logo" 
+                className="h-12 w-auto object-contain" 
+              />
+              <img 
+                src="/ISC logo .png" 
+                alt="ISC Logo" 
+                className="h-12 w-auto object-contain rounded-full" 
+              />
             </Link>
             <p className="text-gray-400 mb-6">
               Empowering the next generation of entrepreneurs through innovation, mentorship, and comprehensive support.
