@@ -59,9 +59,9 @@ export default function NewsTickerSmooth() {
       {/* Ticker content */}
       <div
         ref={tickerRef}
-        className="flex items-center whitespace-nowrap"
+        className="ticker-track flex items-center whitespace-nowrap"
         style={{
-          animation: "scroll 25s linear infinite",
+          animation: "scroll 30s linear infinite",
           animationPlayState: isPaused ? "paused" : "running",
         }}
         onMouseEnter={() => setIsPaused(true)}
@@ -101,9 +101,13 @@ export default function NewsTickerSmooth() {
       <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-blue-600 to-transparent pointer-events-none" />
 
       <style jsx>{`
+        .ticker-track {
+          width: max-content;
+          min-width: 100%;
+        }
         @keyframes scroll {
           0% {
-            transform: translateX(100%);
+            transform: translateX(0);
           }
           100% {
             transform: translateX(-50%);
