@@ -1,14 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
-
+import Link from "next/link"
 export default function News() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const slideInterval = useRef<NodeJS.Timeout | null>(null)
 
   const events = [
     {
@@ -16,7 +17,7 @@ export default function News() {
       date: "2025-07-15",
       time: "2:00 PM - 6:00 PM",
       location: "Main Auditorium",
-      image: "/images/startup-pitch-competition.png",
+      image: "/startup-pitch.png",
       category: "Competition",
       description: "Annual pitch competition where startups compete for $100K in funding.",
     },
@@ -46,30 +47,41 @@ export default function News() {
       date: "2024-01-28",
       category: "Success Story",
       excerpt: "Our incubated startup TechFlow successfully closes Series A funding round led by prominent VCs.",
-      image: "/images/techflow-funding.png",
+      image: "/img7.jpg",
     },
     {
       title: "New Mentorship Program Launch",
       date: "2024-01-25",
       category: "Program Update",
       excerpt: "Introducing our enhanced mentorship program with 50+ industry experts.",
-      image: "/images/mentorship-program.png",
+      image: "/img16.jpg",
     },
     {
       title: "Sustainability Focus Initiative",
       date: "2024-01-22",
       category: "Announcement",
       excerpt: "New initiative to support startups working on sustainable and green technologies.",
-      image: "/images/sustainability-initiative.png",
+      image: "/img2.jpg",
     },
     {
       title: "Alumni Success: EcoGreen Goes Public",
       date: "2024-01-20",
       category: "Success Story",
       excerpt: "Former incubatee EcoGreen announces IPO plans after tremendous growth.",
-      image: "/images/ecogreen-ipo.png",
+      image: "/img5.jpg",
     },
   ]
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (slideInterval.current) clearInterval(slideInterval.current)
+    slideInterval.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % events.length)
+    }, 3000) // 2 seconds
+    return () => {
+      if (slideInterval.current) clearInterval(slideInterval.current)
+    }
+  }, [events.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % events.length)
@@ -93,50 +105,61 @@ export default function News() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-gray-900 mb-8">Upcoming Events</h3>
           <div className="relative">
-            <Card className="overflow-hidden">
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="relative h-64 md:h-auto">
+            <Card className="overflow-hidden flex flex-col md:flex-row items-stretch bg-white shadow-lg rounded-lg">
+              {/* Poster-style image section */}
+              <div className="relative w-full md:w-1/3 flex-shrink-0 flex items-center justify-center bg-white min-h-[300px] md:min-h-[380px]">
+                <div className="relative w-full h-[300px] md:h-[380px] flex items-center justify-center bg-white">
                   <Image
                     src={events[currentSlide].image || "/placeholder.svg"}
                     alt={events[currentSlide].title}
                     fill
-                    className="object-cover"
+                    className="object-contain object-center rounded-t-lg md:rounded-t-none md:rounded-l-lg shadow-md border border-gray-200 bg-white"
+                    style={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      aspectRatio: "3/4",
+                      background: "white"
+                    }}
+                    priority
                   />
-                  {/* Image overlay with event type */}
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-blue-600">{events[currentSlide].category}</Badge>
+                  {/* Category badge overlay */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <Badge className="bg-blue-600 text-white shadow">{events[currentSlide].category}</Badge>
                   </div>
                   {/* Attendee count overlay */}
-                  <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                  <div className="absolute bottom-4 right-4 z-10 bg-black/70 text-white px-3 py-1 rounded-full text-xs font-medium shadow">
                     200+ attending
                   </div>
                 </div>
-                <CardContent className="p-8 flex flex-col justify-center">
-                  <Badge className="w-fit mb-4">{events[currentSlide].category}</Badge>
-                  <h4 className="text-2xl font-bold text-gray-900 mb-4">{events[currentSlide].title}</h4>
-                  <p className="text-gray-600 mb-6">{events[currentSlide].description}</p>
-
-                  <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      <span>{new Date(events[currentSlide].date).toLocaleDateString()}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span>{events[currentSlide].time}</span>
-                    </div>
-                    <div className="flex items-center text-gray-600">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      <span>{events[currentSlide].location}</span>
-                    </div>
+              </div>
+              {/* Event details section */}
+              <CardContent className="flex-1 flex flex-col justify-center p-6 md:p-10">
+                <div className="mb-3">
+                  <Badge className="bg-gray-200 text-gray-700 font-medium px-3 py-1 rounded">{events[currentSlide].category}</Badge>
+                </div>
+                <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 leading-tight">{events[currentSlide].title}</h4>
+                <p className="text-gray-600 mb-6 text-base md:text-lg">{events[currentSlide].description}</p>
+                <div className="space-y-2 mb-8">
+                  <div className="flex items-center text-gray-600 text-sm">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    <span>{new Date(events[currentSlide].date).toLocaleDateString()}</span>
                   </div>
-
-                  <Button>
+                  <div className="flex items-center text-gray-600 text-sm">
+                    <Clock className="h-4 w-4 mr-2" />
+                    <span>{events[currentSlide].time}</span>
+                  </div>
+                  <div className="flex items-center text-gray-600 text-sm">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    <span>{events[currentSlide].location}</span>
+                  </div>
+                </div>
+                <div>
+                  <Button className="w-full md:w-auto flex items-center justify-center">
                     Register Now
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </CardContent>
-              </div>
+                </div>
+              </CardContent>
             </Card>
 
             {/* Enhanced Carousel Controls */}
@@ -197,9 +220,11 @@ export default function News() {
           </div>
 
           <div className="text-center mt-8">
-            <Button variant="outline" size="lg">
-              View All News
-            </Button>
+            <Link href="/news">
+              <Button variant="outline" size="lg">
+                View All News
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
