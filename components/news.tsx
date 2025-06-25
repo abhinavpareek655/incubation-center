@@ -43,31 +43,31 @@ export default function News() {
 
   const news = [
     {
-      title: "TechFlow Raises $2M Series A Round",
-      date: "2024-01-28",
+      title: "BharatAI Secures ₹15 Crore in Series B Funding",
+      date: "2025-07-12",
       category: "Success Story",
-      excerpt: "Our incubated startup TechFlow successfully closes Series A funding round led by prominent VCs.",
+      excerpt: "BharatAI, incubated at CURAJ Incubation Foundation, raises ₹15 crore to expand its AI-driven solutions for rural India.",
       image: "/img7.jpg",
     },
     {
-      title: "New Mentorship Program Launch",
-      date: "2024-01-25",
+      title: "Launch of Atmanirbhar Startup Accelerator",
+      date: "2025-07-15",
       category: "Program Update",
-      excerpt: "Introducing our enhanced mentorship program with 50+ industry experts.",
+      excerpt: "CURAJ Incubation Foundation announces a new accelerator program to empower Indian startups in manufacturing and technology.",
       image: "/img16.jpg",
     },
     {
-      title: "Sustainability Focus Initiative",
-      date: "2024-01-22",
+      title: "GreenTech Jaipur Wins National Innovation Award",
+      date: "2025-07-18",
       category: "Announcement",
-      excerpt: "New initiative to support startups working on sustainable and green technologies.",
+      excerpt: "GreenTech Jaipur, a CURAJ incubatee, is recognized for its sustainable water purification technology at the National Innovation Summit.",
       image: "/img2.jpg",
     },
     {
-      title: "Alumni Success: EcoGreen Goes Public",
-      date: "2024-01-20",
+      title: "Alumni Spotlight: AgriNext Expands to 10 States",
+      date: "2025-07-20",
       category: "Success Story",
-      excerpt: "Former incubatee EcoGreen announces IPO plans after tremendous growth.",
+      excerpt: "AgriNext, founded by CURAJ alumni, now supports farmers across 10 Indian states with its agri-tech platform.",
       image: "/img5.jpg",
     },
   ]

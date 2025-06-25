@@ -26,9 +26,9 @@ export default function Header() {
           <img 
             src="/CIF Logo Final.png" 
             alt="CURAJIF Logo" 
-            className="h-12 w-auto object-contain" 
+            className="h-12 w-auto object-contain opacity-90" 
           />
-          <span className="text-xl font-bold text-gray-900">CIF</span>
+          {/* <span className="text-xl font-bold text-gray-900">CIF</span> */}
         </Link>
 
         {/* Desktop Navigation */}
