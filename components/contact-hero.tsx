@@ -7,7 +7,7 @@ export default function ContactHero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/placeholder.svg?height=600&width=1200')`,
+          backgroundImage: `url('/admin-building.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
@@ -25,7 +25,7 @@ export default function ContactHero() {
           <div className="text-center">
             <Mail className="h-8 w-8 mx-auto mb-2" />
             <div className="text-lg font-semibold">Email Us</div>
-            <div className="text-sm text-gray-300">info@uniincubator.edu</div>
+            <div className="text-sm text-gray-300">info@curajif.in</div>
           </div>
           <div className="text-center">
             <Phone className="h-8 w-8 mx-auto mb-2" />
@@ -35,7 +35,7 @@ export default function ContactHero() {
           <div className="text-center">
             <MapPin className="h-8 w-8 mx-auto mb-2" />
             <div className="text-lg font-semibold">Visit Us</div>
-            <div className="text-sm text-gray-300">123 University Ave</div>
+            <div className="text-sm text-gray-300">CURAJ Incubation Foundation</div>
           </div>
         </div>
       </div>

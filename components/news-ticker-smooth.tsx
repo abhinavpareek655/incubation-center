@@ -10,38 +10,38 @@ export default function NewsTickerSmooth() {
 
   const announcements = [
     {
-      text: "🎉 Applications now open for Spring 2024 Accelerator Program",
-      link: "/programs/accelerator",
+      text: "Applications now open for Spring 2024 Accelerator Program",
+      link: "/news",
       type: "internal",
     },
     {
-      text: "🚀 TechFlow raises $2M Series A - Congratulations to our alumni!",
-      link: "/news/techflow-series-a",
+      text: "TechFlow raises $2M Series A - Congratulations to our alumni!",
+      link: "/news",
       type: "internal",
     },
     {
-      text: "📅 AI & Machine Learning Workshop - February 20th, Register Now",
-      link: "/events/ai-workshop",
+      text: "AI & Machine Learning Workshop - February 20th, Register Now",
+      link: "/news",
       type: "internal",
     },
     {
-      text: "💡 New Mentorship Program launched with 50+ industry experts",
-      link: "/programs/mentorship",
+      text: "New Mentorship Program launched with 50+ industry experts",
+      link: "/news",
       type: "internal",
     },
     {
-      text: "🏆 Demo Day 2024 attracted 500+ attendees and multiple funding commitments",
-      link: "/news/demo-day-2024",
+      text: "Demo Day 2024 attracted 500+ attendees and multiple funding commitments",
+      link: "/news",
       type: "internal",
     },
     {
-      text: "🌱 Sustainability Initiative: Supporting green tech startups with dedicated funding",
-      link: "/programs/sustainability",
+      text: "Sustainability Initiative: Supporting green tech startups with dedicated funding",
+      link: "/news",
       type: "internal",
     },
     {
-      text: "📍 New co-working space now open with 24/7 access for incubated startups",
-      link: "/facilities",
+      text: "New co-working space now open with 24/7 access for incubated startups",
+      link: "/news",
       type: "internal",
     },
   ]

@@ -7,7 +7,7 @@ export default function ContactInfo() {
     {
       icon: Mail,
       title: "Email",
-      details: ["info@uniincubator.edu", "admissions@uniincubator.edu"],
+      details: ["info@curajif.in", "admissions@curajif.in"],
       description: "For general inquiries and program applications",
     },
     {
@@ -19,7 +19,7 @@ export default function ContactInfo() {
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 University Avenue", "Innovation District", "City, State 12345"],
+      details: ["CURAJ Incubation Foundation", "NH-8, Bandarsindari, Tehsil Kishangarh", "Ajmer, Rajasthan 305817"],
       description: "Main campus location",
     },
   ]
