@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ExternalLink } from "lucide-react"
-import { link } from "fs"
+import { useState } from "react"
 
 export default function Startups() {
   const startups = [
@@ -90,50 +90,60 @@ export default function Startups() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {startups.map((startup, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src={startup.logo || "/placeholder.svg"}
-                    alt={`${startup.name} logo`}
-                    width={60}
-                    height={60}
-                    className="rounded-lg mr-4"
-                  />
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">{startup.name}</h3>
-                    <div className="flex items-center space-x-2 text-sm text-gray-500">
-                      <span>{startup.category}</span>
-                      <span>•</span>
-                      <span>Founded {startup.founded}</span>
-                    </div>
-                  </div>
+        {(() => {
+          const [showAll, setShowAll] = useState(false)
+          const visibleStartups = showAll ? startups : startups.slice(0, 3)
+          return (
+            <>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {visibleStartups.map((startup, index) => (
+                  <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <CardContent className="p-6">
+                      <div className="flex items-center mb-4">
+                        <Image
+                          src={startup.logo || "/placeholder.svg"}
+                          alt={`${startup.name} logo`}
+                          width={60}
+                          height={60}
+                          className="rounded-lg mr-4"
+                        />
+                        <div>
+                          <h3 className="text-xl font-semibold text-gray-900">{startup.name}</h3>
+                          <div className="flex items-center space-x-2 text-sm text-gray-500">
+                            <span>{startup.category}</span>
+                            <span>•</span>
+                            <span>Founded {startup.founded}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="text-gray-600 mb-4 line-clamp-3">{startup.description}</p>
+
+                      <div className="flex items-center justify-between">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                          {startup.status}
+                        </span>
+                        <a href={startup.link} target="_blank" rel="noopener noreferrer">
+                          <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
+                            <ExternalLink className="h-4 w-4" />
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+
+              {!showAll && (
+                <div className="text-center mt-12">
+                  <Button size="lg" variant="outline" onClick={() => setShowAll(true)}>
+                    View All Startups
+                  </Button>
                 </div>
-
-                <p className="text-gray-600 mb-4 line-clamp-3">{startup.description}</p>
-
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                    {startup.status}
-                  </span>
-                    <a href={startup.link} target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
-                    </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
-            View All Startups
-          </Button>
-        </div>
+              )}
+            </>
+          )
+        })()}
       </div>
     </section>
   )

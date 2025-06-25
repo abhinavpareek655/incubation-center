@@ -15,14 +15,13 @@ export default function LocationMap() {
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Map Placeholder */}
-          <div className="lg:col-span-2">
-            <Card className="overflow-hidden">
-              <div className="relative h-96 bg-gray-200 flex items-center justify-center">
+          <div className="lg:col-span-2 flex flex-col h-full">
+            <Card className="overflow-hidden h-full">
+              <div className="relative bg-gray-200 flex items-center justify-center" style={{ minHeight: "32rem", height: "100%" }}>
                 <iframe
                   title="CURAJ Incubation Foundation Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.3552663221376!2d75.02471341100852!3d26.623552276723988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c0911c1902441%3A0xf83d23926ad5c5d5!2sCentral%20University%20of%20Rajasthan!5e1!3m2!1sen!2sin!4v1750842029545!5m2!1sen!2sin" 
-                  height="100%"
-                  style={{ border: 0, minHeight: "24rem", width: "100%" }}
+                  style={{ border: 0, minHeight: "32rem", width: "100%", height: "100%" }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

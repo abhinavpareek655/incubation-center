@@ -53,9 +53,12 @@ export default function Forms() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mx-auto">
           {forms.map((form, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Card
+              key={index}
+              className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full flex flex-col"
+            >
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
                   <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
@@ -69,14 +72,15 @@ export default function Forms() {
                 </div>
                 <CardTitle className="text-xl font-semibold">{form.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-4">{form.description}</p>
-
-                <div className="flex items-center text-sm text-gray-500 mb-6">
-                  <Clock className="h-4 w-4 mr-2" />
-                  <span>Deadline: {form.deadline}</span>
+              <CardContent className="flex flex-col flex-1">
+                <div className="flex-1 flex flex-col">
+                  <p className="text-gray-600 mb-4 min-h-[56px]">{form.description}</p>
+                  <div className="flex items-center text-sm text-gray-500 mb-6 mt-auto">
+                    <Clock className="h-4 w-4 mr-2" />
+                    <span>Deadline: {form.deadline}</span>
+                  </div>
                 </div>
-                <Link href={form.link} className="block">
+                <Link href={form.link} className="block mt-auto">
                   <Button className="w-full group-hover:bg-blue-600 group-hover:border-blue-600">
                     Access Form
                     <ArrowRight className="ml-2 h-4 w-4" />
