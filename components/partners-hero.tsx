@@ -7,7 +7,7 @@ export default function PartnersHero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('/placeholder.svg?height=600&width=1200')`,
+          backgroundImage: `url('/img28.png')`,
         }}
       >
         <div className="absolute inset-0 bg-black/60" />
@@ -25,7 +25,7 @@ export default function PartnersHero() {
         <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
           <div className="text-center">
             <Building className="h-8 w-8 mx-auto mb-2" />
-            <div className="text-lg font-semibold">50+ Partners</div>
+            <div className="text-lg font-semibold">20+ Partners</div>
             <div className="text-sm text-gray-300">Active Collaborations</div>
           </div>
           <div className="text-center">

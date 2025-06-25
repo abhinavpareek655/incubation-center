@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function About() {
   const stats = [
-    { icon: Users, label: "Startups Incubated", value: "200+" },
+    { icon: Users, label: "Startups Incubated", value: "20+" },
     { icon: Target, label: "Success Rate", value: "85%" },
     { icon: Award, label: "Awards Won", value: "10+" },
     { icon: Lightbulb, label: "Ideas Developed", value: "500+" },

@@ -49,7 +49,7 @@ export default function EventsSlideshow() {
       date: "2025-10-15",
       time: "9:00 AM - 5:00 PM",
       location: "Conference Center",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/img27.jpg",
       category: "Summit",
       attendees: 300,
       description:
@@ -61,7 +61,7 @@ export default function EventsSlideshow() {
       date: "2025-11-05",
       time: "10:00 AM - 6:00 PM",
       location: "Innovation Lab",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "/img26.jpg",
       category: "Bootcamp",
       attendees: 75,
       description:
