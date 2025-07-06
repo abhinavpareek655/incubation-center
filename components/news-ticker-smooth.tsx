@@ -61,7 +61,7 @@ export default function NewsTickerSmooth() {
         ref={tickerRef}
         className="ticker-track flex items-center whitespace-nowrap"
         style={{
-          animation: "scroll 30s linear infinite",
+          animation: "scroll 50s linear infinite",
           animationPlayState: isPaused ? "paused" : "running",
         }}
         onMouseEnter={() => setIsPaused(true)}
@@ -75,9 +75,9 @@ export default function NewsTickerSmooth() {
               {announcement.type === "internal" ? (
                 <Link
                   href={announcement.link}
-                  className="hover:text-yellow-200 transition-colors duration-200 flex items-center space-x-1 group"
+                  className="hover:text-yellow-200 hover:underline transition-colors duration-200 flex items-center space-x-1 group"
                 >
-                  <span className="text-sm font-medium">{announcement.text}</span>
+                  <span className="text-base font-medium">{announcement.text}</span>
                   <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               ) : (
@@ -87,7 +87,7 @@ export default function NewsTickerSmooth() {
                   rel="noopener noreferrer"
                   className="hover:text-yellow-200 transition-colors duration-200 flex items-center space-x-1 group"
                 >
-                  <span className="text-sm font-medium">{announcement.text}</span>
+                  <span className="text-base font-medium">{announcement.text}</span>
                   <ExternalLink className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               )}
