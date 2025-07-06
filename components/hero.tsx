@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -100,7 +101,7 @@ return (
           {/* Mobile-optimized Stats */}
           <div className="grid grid-cols-3 gap-3 sm:gap-6 py-4 md:py-6 border-y border-gray-200 mx-4 sm:mx-0">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">150+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">50+</div>
               <div className="text-xs sm:text-sm text-gray-600">Startups</div>
             </div>
             <div className="text-center">
@@ -108,20 +109,24 @@ return (
               <div className="text-xs sm:text-sm text-gray-600">Success Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">$50M+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">₹5.3Cr+</div>
               <div className="text-xs sm:text-sm text-gray-600">Funding</div>
             </div>
           </div>
 
           {/* Mobile-optimized CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
+            <Link href="/apply">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-base sm:px-8">
               Apply Now
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="px-6 py-3 text-base sm:px-8 bg-transparent">
-              Learn More
-            </Button>
+            </Link>
+            <Link href="/about">
+              <Button size="lg" variant="outline" className="px-6 py-3 text-base sm:px-8 bg-transparent">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -129,7 +134,7 @@ return (
         <div className="relative">
           <div
             ref={slideRef}
-            className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-xl lg:rounded-2xl overflow-hidden shadow-xl lg:shadow-2xl"
+            className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
