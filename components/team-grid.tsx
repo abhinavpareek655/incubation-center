@@ -3,8 +3,14 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { Linkedin, Twitter, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { useState } from "react"
 
 export default function TeamGrid() {
+  type TeamMember = typeof teamMembers[number];
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const [showTitleDef, setShowTitleDef] = useState<string | null>(null);
+
   const teamMembers = [
     {
       name: "Prof. Anand Bhalerao",
@@ -77,7 +83,7 @@ export default function TeamGrid() {
       department: "Health Sciences",
       image: "/shailendra-pratap-singh.png",
       bio: "Associate Professor Department of Sports Bio-Science and Health Sciences known for expertise in health sciences, innovation, and startup ecosystems.",
-      expertise: ["Sports Biochemistry", "Health Sciences", "Innovation", "Startup Ecosystems"],
+      expertise: ["Sports Biochemistry", "Health Sciences", "Innovation"],
       social: {
         linkedin: "#",
         twitter: "#",
@@ -232,68 +238,296 @@ export default function TeamGrid() {
     },
   ]
 
+  // Title definitions (example, can be expanded)
+  const titleDefinitions = {
+    "Chairman": "The Chairman oversees the board and provides strategic direction.",
+    "Director": "A Director manages specific departments or initiatives.",
+    "Member": "A Member contributes expertise to the foundation's mission.",
+  }
+
+  // Group members by role
+  const chairman = teamMembers.filter(m => m.role === "Chairman");
+  const directors = teamMembers.filter(m => m.role === "Director");
+  const members = teamMembers.filter(m => m.role === "Member");
+
   return (
-    <section className="py-16 md:py-24">
-      <div className="container px-4">
-        <div className="text-center mb-12">
+    <div>
+      <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Expert Team</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Meet the experienced professionals who guide and support our entrepreneurs
           </p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-              <CardContent className="p-6">
-                <div className="text-center mb-4">
-                  <Image
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    width={150}
-                    height={150}
-                    className="rounded-full mx-auto mb-4"
-                  />
-                  <Badge variant="secondary" className="mb-2">
-                    {member.department}
-                  </Badge>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-3">{member.role}</p>
+      <Dialog open={!!selectedMember} onOpenChange={open => !open && setSelectedMember(null)}>
+        {/* Chairman Section */}
+        {chairman.length > 0 && (
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Chairman</h3>
+            <div className={chairman.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"}>
+              {chairman.map((member, index) => (
+                <DialogTrigger asChild key={member.name + index}>
+                  <button
+                    type="button"
+                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none"
+                    onClick={() => setSelectedMember(member)}
+                  >
+                    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full min-h-[420px] flex flex-col">
+                      <CardContent className="p-6 flex flex-col items-center text-center flex-1">
+                        <div className="text-center mb-4">
+                          <Image
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
+                            width={120}
+                            height={120}
+                            className="rounded-full mx-auto mb-4 object-cover w-[120px] h-[120px]"
+                          />
+                          <Badge variant="secondary" className="mb-2">
+                            {member.department}
+                          </Badge>
+                          <h3
+                            className="text-xl font-semibold text-gray-900 mb-1 cursor-pointer hover:underline"
+                            onClick={e => {
+                              e.stopPropagation();
+                              setShowTitleDef(member.role)
+                            }}
+                            title="Click to see title definition"
+                          >
+                            {member.name}
+                          </h3>
+                          <p className="text-blue-600 font-medium mb-3">{member.role}</p>
+                        </div>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-3 min-h-[60px]">{member.bio}</p>
+                        <div className="mb-4 mt-auto">
+                          <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
+                          <div className="flex flex-wrap gap-1 justify-center">
+                            {member.expertise?.map((skill, skillIndex) => (
+                              <Badge key={skillIndex} variant="outline" className="text-xs">
+                                {skill}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex justify-center space-x-2 mt-2">
+                          {member.social.linkedin && (
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Linkedin className="h-4 w-4" />
+                            </Button>
+                          )}
+                          {member.social.twitter && (
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Twitter className="h-4 w-4" />
+                            </Button>
+                          )}
+                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Mail className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </button>
+                </DialogTrigger>
+              ))}
+            </div>
+          </div>
+        )}
+        {/* Directors Section */}
+        {directors.length > 0 && (
+          <div className="mb-12 mx-2 md:mx-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Directors</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
+              {directors.map((member, index) => (
+                <DialogTrigger asChild key={member.name + index}>
+                  <button
+                    type="button"
+                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none"
+                    onClick={() => setSelectedMember(member)}
+                  >
+                    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full min-h-[420px] flex flex-col">
+                      <CardContent className="p-6 flex flex-col items-center text-center flex-1">
+                        <div className="text-center mb-4">
+                          <Image
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
+                            width={120}
+                            height={120}
+                            className="rounded-full mx-auto mb-4 object-cover w-[120px] h-[120px]"
+                          />
+                          <Badge variant="secondary" className="mb-2">
+                            {member.department}
+                          </Badge>
+                          <h3
+                            className="text-xl font-semibold text-gray-900 mb-1 cursor-pointer hover:underline"
+                            onClick={e => {
+                              e.stopPropagation();
+                              setShowTitleDef(member.role)
+                            }}
+                            title="Click to see title definition"
+                          >
+                            {member.name}
+                          </h3>
+                          <p className="text-blue-600 font-medium mb-3">{member.role}</p>
+                        </div>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-3 min-h-[60px]">{member.bio}</p>
+                        <div className="mb-4 mt-auto">
+                          <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
+                          <div className="flex flex-wrap gap-1 justify-center">
+                            {member.expertise?.map((skill, skillIndex) => (
+                              <Badge key={skillIndex} variant="outline" className="text-xs">
+                                {skill}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex justify-center space-x-2 mt-2">
+                          {member.social.linkedin && (
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Linkedin className="h-4 w-4" />
+                            </Button>
+                          )}
+                          {member.social.twitter && (
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Twitter className="h-4 w-4" />
+                            </Button>
+                          )}
+                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Mail className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </button>
+                </DialogTrigger>
+              ))}
+            </div>
+          </div>
+        )}
+        {/* Members Section */}
+        {members.length > 0 && (
+          <div className="mb-12 mx-2 md:mx-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Members</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
+              {members.map((member, index) => (
+                <DialogTrigger asChild key={member.name + index}>
+                  <button
+                    type="button"
+                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none"
+                    onClick={() => setSelectedMember(member)}
+                  >
+                    <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full min-h-[420px] flex flex-col">
+                      <CardContent className="p-6 flex flex-col items-center text-center flex-1">
+                        <div className="text-center mb-4">
+                          <Image
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
+                            width={120}
+                            height={120}
+                            className="rounded-full mx-auto mb-4 object-cover w-[120px] h-[120px]"
+                          />
+                          <Badge variant="secondary" className="mb-2">
+                            {member.department}
+                          </Badge>
+                          <h3
+                            className="text-xl font-semibold text-gray-900 mb-1 cursor-pointer hover:underline"
+                            onClick={e => {
+                              e.stopPropagation();
+                              setShowTitleDef(member.role)
+                            }}
+                            title="Click to see title definition"
+                          >
+                            {member.name}
+                          </h3>
+                          <p className="text-blue-600 font-medium mb-3">{member.role}</p>
+                        </div>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-3 min-h-[60px]">{member.bio}</p>
+                        <div className="mb-4 mt-auto">
+                          <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
+                          <div className="flex flex-wrap gap-1 justify-center">
+                            {member.expertise?.map((skill, skillIndex) => (
+                              <Badge key={skillIndex} variant="outline" className="text-xs">
+                                {skill}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex justify-center space-x-2 mt-2">
+                          {member.social.linkedin && (
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Linkedin className="h-4 w-4" />
+                            </Button>
+                          )}
+                          {member.social.twitter && (
+                            <Button variant="ghost" size="icon" className="h-8 w-8">
+                              <Twitter className="h-4 w-4" />
+                            </Button>
+                          )}
+                          <Button variant="ghost" size="icon" className="h-8 w-8">
+                            <Mail className="h-4 w-4" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </button>
+                </DialogTrigger>
+              ))}
+            </div>
+          </div>
+        )}
+        {/* Member Details Modal */}
+        {selectedMember && (
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{selectedMember.name}</DialogTitle>
+              <DialogDescription>{selectedMember.role}</DialogDescription>
+            </DialogHeader>
+            <div className="flex flex-col items-center text-center">
+              <Image
+                src={selectedMember.image || "/placeholder.svg"}
+                alt={selectedMember.name}
+                width={140}
+                height={140}
+                className="rounded-full mb-4 object-cover w-[140px] h-[140px]"
+              />
+              <p className="text-gray-600 mb-4">{selectedMember.bio}</p>
+              <div className="mb-4">
+                <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
+                <div className="flex flex-wrap gap-1 justify-center">
+                  {selectedMember.expertise?.map((skill, skillIndex) => (
+                    <Badge key={skillIndex} variant="outline" className="text-xs">
+                      {skill}
+                    </Badge>
+                  ))}
                 </div>
-
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">{member.bio}</p>
-
-                <div className="mb-4">
-                  <div className="text-sm font-medium text-gray-900 mb-2">Expertise:</div>
-                  <div className="flex flex-wrap gap-1">
-                    {member.expertise?.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="outline" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex justify-center space-x-2">
-                  {member.social.linkedin && (
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Linkedin className="h-4 w-4" />
-                    </Button>
-                  )}
-                  {member.social.twitter && (
-                    <Button variant="ghost" size="icon" className="h-8 w-8">
-                      <Twitter className="h-4 w-4" />
-                    </Button>
-                  )}
+              </div>
+              <div className="flex justify-center space-x-2 mt-2">
+                {selectedMember.social.linkedin && (
                   <Button variant="ghost" size="icon" className="h-8 w-8">
-                    <Mail className="h-4 w-4" />
+                    <Linkedin className="h-4 w-4" />
                   </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+                )}
+                {selectedMember.social.twitter && (
+                  <Button variant="ghost" size="icon" className="h-8 w-8">
+                    <Twitter className="h-4 w-4" />
+                  </Button>
+                )}
+                <Button variant="ghost" size="icon" className="h-8 w-8">
+                  <Mail className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
+      {/* Title Definition Modal */}
+      <Dialog open={!!showTitleDef} onOpenChange={open => !open && setShowTitleDef(null)}>
+        {showTitleDef && (
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>{showTitleDef}</DialogTitle>
+              <DialogDescription>{(showTitleDef && titleDefinitions[showTitleDef as keyof typeof titleDefinitions]) || "No definition available."}</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        )}
+      </Dialog>
+    </div>
   )
 }
