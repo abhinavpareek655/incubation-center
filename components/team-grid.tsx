@@ -28,7 +28,7 @@ export default function TeamGrid() {
     {
       name: "Dr. Akhil Agrawal",
       role: "Director",
-      department: "",
+      department: "Life Sciences",
       image: "/img21.jpg",
       bio: "Associate Professor and Head of Microbiology at CURAJ, Ph.D. (TERI University), postdoc (University of Calgary). Expert in crop and agricultural microbiology, IPR, innovation, and startup ecosystems.",
       expertise: ["Microbiology", "IPR", "Innovation", "Startup Ecosystems"],
@@ -266,10 +266,12 @@ export default function TeamGrid() {
             <div className={chairman.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"}>
               {chairman.map((member, index) => (
                 <DialogTrigger asChild key={member.name + index}>
-                  <button
-                    type="button"
-                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none"
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none cursor-pointer"
                     onClick={() => setSelectedMember(member)}
+                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setSelectedMember(member); } }}
                   >
                     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full min-h-[420px] flex flex-col">
                       <CardContent className="p-6 flex flex-col items-center text-center flex-1">
@@ -324,7 +326,7 @@ export default function TeamGrid() {
                         </div>
                       </CardContent>
                     </Card>
-                  </button>
+                  </div>
                 </DialogTrigger>
               ))}
             </div>
@@ -337,10 +339,12 @@ export default function TeamGrid() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
               {directors.map((member, index) => (
                 <DialogTrigger asChild key={member.name + index}>
-                  <button
-                    type="button"
-                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none"
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none cursor-pointer"
                     onClick={() => setSelectedMember(member)}
+                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setSelectedMember(member); } }}
                   >
                     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full min-h-[420px] flex flex-col">
                       <CardContent className="p-6 flex flex-col items-center text-center flex-1">
@@ -395,7 +399,7 @@ export default function TeamGrid() {
                         </div>
                       </CardContent>
                     </Card>
-                  </button>
+                  </div>
                 </DialogTrigger>
               ))}
             </div>
@@ -408,10 +412,12 @@ export default function TeamGrid() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-center">
               {members.map((member, index) => (
                 <DialogTrigger asChild key={member.name + index}>
-                  <button
-                    type="button"
-                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none"
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className="w-full max-w-full sm:max-w-xl min-w-0 mx-auto text-left focus:outline-none cursor-pointer"
                     onClick={() => setSelectedMember(member)}
+                    onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { setSelectedMember(member); } }}
                   >
                     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 h-full min-h-[420px] flex flex-col">
                       <CardContent className="p-6 flex flex-col items-center text-center flex-1">
@@ -466,7 +472,7 @@ export default function TeamGrid() {
                         </div>
                       </CardContent>
                     </Card>
-                  </button>
+                  </div>
                 </DialogTrigger>
               ))}
             </div>
