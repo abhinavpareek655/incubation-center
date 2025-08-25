@@ -1,25 +1,26 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Mail, Phone, MapPin, Clock, Calendar, Users, ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 export default function ContactInfo() {
   const contactMethods = [
     {
       icon: Mail,
       title: "Email",
-      details: ["info@curajif.in", "admissions@curajif.in"],
+      details: ["ia.cif@curaj.ac.in", "contact@curajif.in"],
       description: "For general inquiries and program applications",
     },
     {
       icon: Phone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568"],
+      details: ["+91 8890632934"],
       description: "Monday - Friday, 9:00 AM - 6:00 PM",
     },
     {
       icon: MapPin,
       title: "Address",
-      details: ["CURAJ Incubation Foundation", "NH-8, Bandarsindari, Tehsil Kishangarh", "Ajmer, Rajasthan 305817"],
+      details: ["CURAJ Incubation Foundation, SP4 Building", "NH-8, Bandarsindari, Tehsil Kishangarh", "Ajmer, Rajasthan 305817"],
       description: "Main campus location",
     },
   ]
@@ -95,15 +96,11 @@ export default function ContactInfo() {
             </div>
             <p className="text-gray-600 mb-4">Follow us on social media for the latest updates and news.</p>
             <div className="flex space-x-2">
-              <Button variant="outline" size="sm">
-                LinkedIn
-              </Button>
-              <Button variant="outline" size="sm">
-                Twitter
-              </Button>
-              <Button variant="outline" size="sm">
-                Facebook
-              </Button>
+              <Link href="https://www.linkedin.com/in/curaj-incubation-foundation-39b74a34b">
+                <Button variant="outline" size="sm">
+                  LinkedIn
+                </Button>
+              </Link>
             </div>
           </CardContent>
         </Card>

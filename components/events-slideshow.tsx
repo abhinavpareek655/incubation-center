@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Calendar, MapPin, Clock, ChevronLeft, ChevronRight, Users, X } from "lucide-react"
 import Image from "next/image"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog"
+import Link from "next/link"
 
 export default function EventsSlideshow() {
   const [currentTab, setCurrentTab] = useState<'upcoming' | 'past'>('upcoming')
@@ -17,61 +18,52 @@ export default function EventsSlideshow() {
 
   const events = [
     {
-      title: "Startup Pitch Competition 2025",
-      date: "2025-07-15",
-      time: "2:00 PM - 6:00 PM",
-      location: "Main Auditorium",
-      image: "/startup-pitch.png",
+      title: "Startup & Innovation 4.0 Competition",
+      date: "2025-09-14",
+      time: "10:00 AM - 6:00 PM",
+      location: "4A2 Building",
+      image: "/WhatsApp Image 2025-08-25 at 13.22.15_4388a6ed.jpg",
       category: "Competition",
       attendees: 200,
-      description: "Annual pitch competition where startups compete for $100K in funding.",
-      highlights: ["$100K Prize Pool", "Expert Judges", "Networking Reception"],
+      description: "Annual pitch competition where startups compete for ₹50K in funding.",
+      highlights: ["₹50K Prize Pool", "Expert Judges", "Networking Reception"],
+      link: "https://startup-and-innovation-4-0.vercel.app/"
     },
     {
-      title: "AI & Machine Learning Workshop",
-      date: "2024-02-20",
-      time: "10:00 AM - 4:00 PM",
-      location: "Tech Lab",
-      image: "/img23.jpg",
-      category: "Workshop",
-      attendees: 50,
-      description: "Hands-on workshop covering the latest AI technologies and applications.",
-      highlights: ["Hands-on Learning", "Industry Experts", "Certificate Provided"],
+      title: "Smart India Hackathon 2025",
+      date: "2025-08-25",
+      time: "Full Day",
+      location: "Online",
+      image: "/WhatsApp Image 2025-08-25 at 14.54.17_7485ec6e.jpg",
+      category: "Competition",
+      attendees: 5000,
+      description: "Participate in the Smart India Hackathon 2025 and showcase your innovative solutions.",
+      highlights: ["Hands-on Learning", "Industry Experts", "Certificate Provided", "Chance to win great prizes"],
+      link: "https://www.sih.gov.in/signin",
     },
     {
-      title: "Investor Networking Night",
-      date: "2024-02-25",
-      time: "6:00 PM - 9:00 PM",
-      location: "Innovation Hub",
-      image: "/img25.jpg",
-      category: "Networking",
+      title: "Tally Startup Challenge",
+      date: "2025-09-03",
+      time: "Full Day",
+      location: "Online",
+      image: "/image copy 6.png",
+      category: "Competition",
+      description: "This theme highlights flexibility and efficiency, emphasizing the solution's role in optimizing manufacturing processes and driving growth for MSME manufacturers.",
+      link: "https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=68519e05e4b04240c52b3658",
       attendees: 150,
-      description: "Connect with angel investors and VCs looking for promising startups.",
-      highlights: ["20+ Investors", "1-on-1 Sessions", "Pitch Opportunities"],
+      highlights: ["Solution Showcase", "Mentorship Opportunities"],
     },
     {
-      title: "Women in Tech Summit",
-      date: "2025-10-15",
-      time: "9:00 AM - 5:00 PM",
-      location: "Conference Center",
-      image: "/img27.jpg",
-      category: "Summit",
+      title: "Sustainable Solutions for Hilly Region Development & Livelihood Promotion",
+      date: "2025-09-25",
+      time: "Full Day",
+      location: "Online",
+      image: "/image copy 7.png",
+      category: "Challenge",
+      description: "This challenge seeks innovative and scalable solutions that address the unique socio-economic and environmental challenges faced by hilly regions.",
+      link: "https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=68ab18b9e4b021e0fa5dbe93",
       attendees: 300,
-      description:
-        "Celebrating and empowering women entrepreneurs in technology. Featuring keynote speakers, panel discussions, and networking opportunities.",
-      highlights: ["Keynote Speakers", "Panel Discussions", "Mentorship Sessions"],
-    },
-    {
-      title: "Blockchain & Web3 Bootcamp",
-      date: "2025-11-05",
-      time: "10:00 AM - 6:00 PM",
-      location: "Innovation Lab",
-      image: "/img26.jpg",
-      category: "Bootcamp",
-      attendees: 75,
-      description:
-        "Intensive bootcamp on blockchain technology and Web3 applications. Learn to build decentralized applications and understand crypto economics.",
-      highlights: ["Build DApps", "Smart Contracts", "Crypto Economics"],
+      highlights: ["Solution Showcase", "Mentorship Opportunities"],
     },
   ]
 
@@ -223,12 +215,11 @@ export default function EventsSlideshow() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <Button size="lg" className="flex-1">
-                      Register Now
-                    </Button>
-                    <Button size="lg" variant="outline">
-                      Learn More
-                    </Button>
+                    <Link href={events[currentSlide].link} target="_blank" className="flex-1">
+                      <Button size="lg" className="flex-1">
+                        Register Now
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </div>

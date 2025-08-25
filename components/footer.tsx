@@ -31,6 +31,11 @@ export default function Footer() {
               Empowering the next generation of entrepreneurs through innovation, mentorship, and comprehensive support.
             </p>
             <div className="flex space-x-4">
+              <Link href="https://www.linkedin.com/in/curaj-incubation-foundation-39b74a34b" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+              </Link>
               <Link href="https://www.facebook.com/curajofficial" target="_blank" rel="noopener noreferrer">
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-gray-800">
                   <Facebook className="h-4 w-4" />
@@ -129,16 +134,16 @@ export default function Footer() {
             <div className="space-y-4 mb-6">
               <div className="flex items-center text-gray-400">
                 <Mail className="h-4 w-4 mr-2" />
-                <span className="text-sm">info@curajif.in</span>
+                <span className="text-sm">contact@curajif.in</span>
               </div>
               <div className="flex items-center text-gray-400">
                 <Phone className="h-4 w-4 mr-2" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+91 8890632934</span>
               </div>
               <div className="flex items-start text-gray-400">
                 <MapPin className="h-4 w-4 mr-2 mt-0.5" />
                 <span className="text-sm">
-                  CURAJ Incubation Foundation
+                  CURAJ Incubation Foundation, SP4 Building
                   <br />
                   NH-8, Bandarsindari, Tehsil Kishangarh
                   <br />

@@ -21,12 +21,20 @@ export default function Hero() {
       alt: "Modern co-working space with entrepreneurs collaborating",
     },
     {
+      image: "/WhatsApp Image 2025-08-25 at 15.18.33_0b161782.jpg",
+      alt: "Innovation and Startup Ecosystem in India",
+    },
+    {
       image: "/img17.jpg",
       alt: "Innovation lab with cutting-edge technology",
     },
     {
       image: "/img14.jpg",
       alt: "Startup pitch presentation in progress",
+    },
+    {
+      image: "/WhatsApp Image 2025-08-25 at 14.55.44_8feddaf7.jpg",
+      alt: "Entrepreneurs in Action 2023",
     },
     {
       image: "/img2.jpg",
@@ -36,14 +44,8 @@ export default function Hero() {
       image: "/img16.jpg",
       alt: "Team meeting in modern conference room",
     },
-    {
-      image: "/WhatsApp Image 2025-08-25 at 14.55.44_8feddaf7.jpg",
-      alt: "Entrepreneurs in Action 2023",
-    },
-    {
-      image: "/WhatsApp Image 2025-08-25 at 15.18.33_0b161782.jpg",
-      alt: "Innovation and Startup Ecosystem in India",
-    },
+    
+    
   ]
 // Auto-advance slides
 useEffect(() => {
@@ -109,15 +111,15 @@ return (
           {/* Mobile-optimized Stats */}
           <div className="grid grid-cols-3 gap-3 sm:gap-6 py-4 md:py-6 border-y border-gray-200 mx-4 sm:mx-0">
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">50+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">52+</div>
               <div className="text-xs sm:text-sm text-gray-600">Startups</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">85%</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">83%</div>
               <div className="text-xs sm:text-sm text-gray-600">Success Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">₹5.3Cr+</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-600 mb-1">₹7.95Cr+</div>
               <div className="text-xs sm:text-sm text-gray-600">Funding</div>
             </div>
           </div>

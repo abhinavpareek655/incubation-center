@@ -105,17 +105,17 @@ const toggleAutoPlay = () => {
               <div className="text-center">
                 <Mail className="h-6 w-6 md:h-8 md:w-8 mx-auto mb-1 md:mb-2 text-orange-600" />
                 <div className="text-base md:text-lg font-semibold text-gray-900">Email Us</div>
-                <div className="text-sm text-gray-600">info@uniincubator.edu</div>
+                <div className="text-sm text-gray-600">cif@curaj.ac.in</div>
               </div>
               <div className="text-center">
                 <Phone className="h-6 w-6 md:h-8 md:w-8 mx-auto mb-1 md:mb-2 text-orange-600" />
                 <div className="text-base md:text-lg font-semibold text-gray-900">Call Us</div>
-                <div className="text-sm text-gray-600">+1 (555) 123-4567</div>
+                <div className="text-sm text-gray-600">+91 8890632934</div>
               </div>
               <div className="text-center">
                 <MapPin className="h-6 w-6 md:h-8 md:w-8 mx-auto mb-1 md:mb-2 text-orange-600" />
                 <div className="text-base md:text-lg font-semibold text-gray-900">Visit Us</div>
-                <div className="text-sm text-gray-600">123 University Ave</div>
+                <div className="text-sm text-gray-600">Central University of Rajasthan</div>
               </div>
             </div>
           </div>

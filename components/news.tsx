@@ -20,7 +20,7 @@ export default function News() {
       image: "/WhatsApp Image 2025-08-25 at 13.22.15_4388a6ed.jpg",
       category: "Competition",
       description: "Annual pitch competition where startups compete for ₹50K in funding.",
-      link: "https://startup-and-innovation-4-0.vercel.app/"
+      link: "https://startup-and-innovation-4-0.vercel.app/#register"
     },
     {
       title: "Smart India Hackathon 2025",
@@ -56,11 +56,11 @@ export default function News() {
 
   const news = [
     {
-      title: "BharatAI Secures ₹15 Crore in Series B Funding",
-      date: "2025-07-12",
-      category: "Success Story",
-      excerpt: "BharatAI, incubated at CURAJ Incubation Foundation, raises ₹15 crore to expand its AI-driven solutions for rural India.",
-      image: "/img7.jpg",
+      title: "Startup and Innovation 2.0 Competition",
+      date: "2023-09-15",
+      category: "Competition",
+      excerpt: "Startup and Innovation 2.0 Competition was successfully conducted on 15th September 2023 at Central University of Rajasthan. The event saw enthusiastic participation from budding entrepreneurs and innovators.",
+      image: "/WhatsApp Image 2025-08-25 at 15.41.08_716a6f08.jpg",
     },
     {
       title: "Launch of Atmanirbhar Startup Accelerator",

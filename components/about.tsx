@@ -4,10 +4,10 @@ import Image from "next/image"
 
 export default function About() {
   const stats = [
-    { icon: Users, label: "Startups Incubated", value: "20+" },
-    { icon: Target, label: "Success Rate", value: "85%" },
+    { icon: Users, label: "Startups Incubated", value: "52+" },
+    { icon: Target, label: "Success Rate", value: "83%" },
     { icon: Award, label: "Awards Won", value: "10+" },
-    { icon: Lightbulb, label: "Ideas Developed", value: "500+" },
+    { icon: Lightbulb, label: "Ideas Developed", value: "300+" },
   ]
 
   return (
