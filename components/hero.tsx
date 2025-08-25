@@ -36,6 +36,14 @@ export default function Hero() {
       image: "/img16.jpg",
       alt: "Team meeting in modern conference room",
     },
+    {
+      image: "/WhatsApp Image 2025-08-25 at 14.55.44_8feddaf7.jpg",
+      alt: "Entrepreneurs in Action 2023",
+    },
+    {
+      image: "/WhatsApp Image 2025-08-25 at 15.18.33_0b161782.jpg",
+      alt: "Innovation and Startup Ecosystem in India",
+    },
   ]
 // Auto-advance slides
 useEffect(() => {

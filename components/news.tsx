@@ -13,31 +13,44 @@ export default function News() {
 
   const events = [
     {
-      title: "Startup Pitch Competition 2025",
-      date: "2025-07-15",
-      time: "2:00 PM - 6:00 PM",
-      location: "Main Auditorium",
-      image: "/startup-pitch.png",
+      title: "Startup & Innovation 4.0 Competition",
+      date: "2025-09-14",
+      time: "10:00 AM - 6:00 PM",
+      location: "4A2 Building",
+      image: "/WhatsApp Image 2025-08-25 at 13.22.15_4388a6ed.jpg",
       category: "Competition",
-      description: "Annual pitch competition where startups compete for $100K in funding.",
+      description: "Annual pitch competition where startups compete for ₹50K in funding.",
+      link: "https://startup-and-innovation-4-0.vercel.app/"
     },
     {
-      title: "AI & Machine Learning Workshop",
-      date: "2024-02-20",
-      time: "10:00 AM - 4:00 PM",
-      location: "Tech Lab",
-      image: "/img23.jpg",
-      category: "Workshop",
-      description: "Hands-on workshop covering the latest AI technologies and applications.",
+      title: "Smart India Hackathon 2025",
+      date: "2025-08-25",
+      time: "Full Day",
+      location: "Online",
+      image: "/WhatsApp Image 2025-08-25 at 14.54.17_7485ec6e.jpg",
+      category: "Competition",
+      description: "Participate in the Smart India Hackathon 2025 and showcase your innovative solutions.",
+      link: "https://www.sih.gov.in/signin",
     },
     {
-      title: "Investor Networking Night",
-      date: "2024-02-25",
-      time: "6:00 PM - 9:00 PM",
-      location: "Innovation Hub",
-      image: "/img25.jpg",
-      category: "Networking",
-      description: "Connect with angel investors and VCs looking for promising startups.",
+      title: "Tally Startup Challenge",
+      date: "2025-09-03",
+      time: "Full Day",
+      location: "Online",
+      image: "/image copy 6.png",
+      category: "Competition",
+      description: "This theme highlights flexibility and efficiency, emphasizing the solution's role in optimizing manufacturing processes and driving growth for MSME manufacturers.",
+      link: "https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=68519e05e4b04240c52b3658"
+    },
+    {
+      title: "Sustainable Solutions for Hilly Region Development & Livelihood Promotion",
+      date: "2025-09-25",
+      time: "Full Day",
+      location: "Online",
+      image: "/image copy 7.png",
+      category: "Challenge",
+      description: "This challenge seeks innovative and scalable solutions that address the unique socio-economic and environmental challenges faced by hilly regions.",
+      link: "https://www.startupindia.gov.in/content/sih/en/ams-application/challenge.html?applicationId=68ab18b9e4b021e0fa5dbe93",
     },
   ]
 
@@ -154,10 +167,12 @@ export default function News() {
                   </div>
                 </div>
                 <div>
-                  <Button className="w-full md:w-auto flex items-center justify-center">
-                    Register Now
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href={events[currentSlide].link || "#"} target="_blank" rel="noopener noreferrer">
+                    <Button className="w-full md:w-auto flex items-center justify-center">
+                      Register Now
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
