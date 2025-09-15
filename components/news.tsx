@@ -13,16 +13,6 @@ export default function News() {
 
   const events = [
     {
-      title: "Startup & Innovation 4.0 Competition",
-      date: "2025-09-14",
-      time: "10:00 AM - 6:00 PM",
-      location: "4A2 Building",
-      image: "/WhatsApp Image 2025-08-25 at 13.22.15_4388a6ed.jpg",
-      category: "Competition",
-      description: "Annual pitch competition where startups compete for ₹50K in funding.",
-      link: "https://startup-and-innovation-4-0.vercel.app/#register"
-    },
-    {
       title: "Smart India Hackathon 2025",
       date: "2025-08-25",
       time: "Full Day",

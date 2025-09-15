@@ -18,18 +18,6 @@ export default function EventsSlideshow() {
 
   const events = [
     {
-      title: "Startup & Innovation 4.0 Competition",
-      date: "2025-09-14",
-      time: "10:00 AM - 6:00 PM",
-      location: "4A2 Building",
-      image: "/WhatsApp Image 2025-08-25 at 13.22.15_4388a6ed.jpg",
-      category: "Competition",
-      attendees: 200,
-      description: "Annual pitch competition where startups compete for ₹50K in funding.",
-      highlights: ["₹50K Prize Pool", "Expert Judges", "Networking Reception"],
-      link: "https://startup-and-innovation-4-0.vercel.app/"
-    },
-    {
       title: "Smart India Hackathon 2025",
       date: "2025-08-25",
       time: "Full Day",

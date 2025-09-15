@@ -13,11 +13,6 @@ export default function NewsTickerSmooth() {
       text: "Smart India Hackathon registration 2025 is now live",
       link: "https://www.sih.gov.in/signin",
       type: "external",
-    },
-    {
-      text: "Startup and Innovation 4.0 Competition is now open for applications",
-      link: "https://startup-and-innovation-4-0.vercel.app/",
-      type: "external",
     }
   ]
 
