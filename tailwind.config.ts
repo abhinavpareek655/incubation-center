@@ -68,6 +68,7 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		keyframes: {
+                        marquee: {"0%": { transform: "translateX(100%)" }, "100%": { transform: "translateX(-100%)" } },
   			'accordion-down': {
   				from: {
   					height: '0'
@@ -86,6 +87,7 @@ const config: Config = {
   			}
   		},
   		animation: {
+                        marquee: "marquee 25s linear infinite",
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
